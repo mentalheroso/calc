@@ -132,6 +132,9 @@ func main() {
 			}
 		}
 		raz := numberRome1Int - numberRome2Int
+		if 0 < numberRome1Int && numberRome1Int < 11 && 0 < numberRome2Int && numberRome2Int < 11 {
+			panic("числа вне диапозона[I:X]")
+		}
 		switch sign {
 		case "+":
 			res = numberRome1Int + numberRome2Int
@@ -170,15 +173,11 @@ func main() {
 			case "*":
 				fmt.Print(number1Int * number2Int)
 			case "/":
-				if number2Int == 0 {
-					panic("деление на 0")
-				}
-				fmt.Print(number1Int / number2Int)
 			default:
 				panic("Нет знака")
 			}
 		} else {
-			panic("числа вне диапозона[0:10]")
+			panic("числа вне диапозона[1:10]")
 		}
 	}
 }
