@@ -132,7 +132,7 @@ func main() {
 			}
 		}
 		raz := numberRome1Int - numberRome2Int
-		if 0 < numberRome1Int && numberRome1Int < 11 && 0 < numberRome2Int && numberRome2Int < 11 {
+		if 0 > numberRome1Int || numberRome1Int > 10 || 0 > numberRome2Int || numberRome2Int > 10 {
 			panic("числа вне диапозона[I:X]")
 		}
 		switch sign {
