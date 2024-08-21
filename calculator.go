@@ -161,7 +161,7 @@ func main() {
 		if err1 != nil {
 			panic("Введены не числа")
 		}
-		if 0 <= (number1Int) && (number1Int) <= 10 && 0 <= (number2Int) && (number2Int) <= 10 {
+		if 1 <= (number1Int) && (number1Int) <= 10 && 1 <= (number2Int) && (number2Int) <= 10 {
 			switch sign {
 			case "+":
 				fmt.Print(number1Int + number2Int)
