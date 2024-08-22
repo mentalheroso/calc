@@ -176,9 +176,6 @@ func main() {
 			case "*":
 				fmt.Print(number1Int * number2Int)
 			case "/":
-				if number1Int < number2Int {
-					panic("Второе число больше чем первое")
-				}
 				fmt.Print(number1Int / number2Int)
 			default:
 				panic("Нет знака")
