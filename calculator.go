@@ -110,10 +110,10 @@ func main() {
 	sum = numberString1 + numberString2
 	math123 := true
 	if math123 == strings.ContainsAny(sum, "/*+-") {
-		panic("строка не является математической операцией")
+		panic("Строка не является математической операцией")
 	}
 	if strings.ContainsAny(sum, "IVX") && strings.ContainsAny(sum, "1234567890") {
-		panic("используются одновременно разные системы счисления")
+		panic("Используются одновременно разные системы счисления")
 	}
 	i, j := 0, 0
 	if strings.ContainsAny(sum, "IVX") {
@@ -133,7 +133,7 @@ func main() {
 		}
 		raz := numberRome1Int - numberRome2Int
 		if 0 > numberRome1Int || numberRome1Int > 10 || 0 > numberRome2Int || numberRome2Int > 10 {
-			panic("числа вне диапозона[I:X]")
+			panic("Числа вне диапозона[I:X]")
 		}
 		switch sign {
 		case "+":
@@ -146,6 +146,9 @@ func main() {
 		case "*":
 			res = numberRome1Int * numberRome2Int
 		case "/":
+			if numberRome1Int < numberRome2Int {
+				panic("Второе число больше первого")
+			}
 			res = numberRome1Int / numberRome2Int
 		default:
 			panic("Нет знака")
@@ -173,11 +176,15 @@ func main() {
 			case "*":
 				fmt.Print(number1Int * number2Int)
 			case "/":
+				if number1Int < number2Int {
+					panic("Второе число больше чем первое")
+				}
+				fmt.Print(number1Int / number2Int)
 			default:
 				panic("Нет знака")
 			}
 		} else {
-			panic("числа вне диапозона[1:10]")
+			panic("Числа вне диапозона[1:10]")
 		}
 	}
 }
