@@ -122,6 +122,8 @@ func main() {
 			if numberString1 == arabToRome[i] {
 				numberRome1Int = romeToArab[numberString1]
 				break
+			} else if i > 100 {
+				panic("не найдено число")
 			}
 		}
 		for {
@@ -129,6 +131,8 @@ func main() {
 			if numberString2 == arabToRome[j] {
 				numberRome2Int = romeToArab[numberString2]
 				break
+			} else if j > 100 {
+				panic("не найдено число")
 			}
 		}
 		raz := numberRome1Int - numberRome2Int
